@@ -1,3 +1,5 @@
 os/
 temp.py
 temp.lean
+target/
+project/target/
