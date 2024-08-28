@@ -24,8 +24,8 @@ object TextEditor {
       //    CustomStdOut.myPrint(textArea.getText)
       //}) // ボタンを押すとプログラム終了
 
-      val executeButton = new JButton("Execute Julia")
-      executeButton.addActionListener(_ => {
+      val executeJuliaButton = new JButton("Execute Julia")
+      executeJuliaButton.addActionListener(_ => {
           val filename:String = "temp.jl"
           SaveFile.save(filename, textArea.getText)
           cli.ExecuteJulia.execute(filename)
@@ -38,15 +38,35 @@ object TextEditor {
           cli.ExecuteLean.execute(filename)
       }) // ボタンを押すとプログラム終了
 
-
       // JTextAreaをスクロール可能にするためにJScrollPaneに包む
       val scrollPane = new JScrollPane(textArea)
 
+
+      val readFileField = new JTextField(40) // 40はテキストフィールドの列数
+
+      val readFileButton = new JButton("Read")
+      readFileButton.addActionListener(_ => {
+          textArea.setText( util.ReadFile.read(readFileField.getText) )
+      }) // ボタンを押すとプログラム終了
+
+
+      val saveFileField = new JTextField(40) // 40はテキストフィールドの列数
+
+      val saveFileButton = new JButton("Save")
+      saveFileButton.addActionListener(_ => {
+          util.SaveFile.save(saveFileField.getText, textArea.getText)
+      }) // ボタンを押すとプログラム終了
+
+
       // JPanelを使ってコンポーネントを整理
       val panel:JPanel = new JPanel()
+      panel.add(readFileField)
+      panel.add(readFileButton)
       panel.add(scrollPane)
+      panel.add(saveFileField)
+      panel.add(saveFileButton)
       //panel.add(printButton)
-      panel.add(executeButton)
+      panel.add(executeJuliaButton)
       panel.add(executeLeanButton)
 
       panel.setPreferredSize(new Dimension(400, 300))

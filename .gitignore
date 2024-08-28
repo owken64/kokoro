@@ -2,5 +2,8 @@ os/
 temp.py
 temp.lean
 temp.jl
+*.py
+*.lean
+*.jl
 target/
 project/target/
