@@ -18,14 +18,15 @@ object TextEditor {
 
       val printButton = new JButton("Print")
       printButton.addActionListener(_ => {
+          println(textArea.getText)
           CustomStdOut.myPrint(textArea.getText)
       }) // ボタンを押すとプログラム終了
 
-      val executeButton = new JButton("Execute Python")
+      val executeButton = new JButton("Execute Julia")
       executeButton.addActionListener(_ => {
-          val filename:String = "temp.py"
+          val filename:String = "temp.jl"
           SaveFile.save(filename, textArea.getText)
-          cli.ExecutePython.execute(filename)
+          cli.ExecuteJulia.execute(filename)
       }) // ボタンを押すとプログラム終了
 
       val executeLeanButton = new JButton("Execute Lean")

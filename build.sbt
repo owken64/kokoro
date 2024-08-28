@@ -8,6 +8,7 @@ lazy val root = (project in file("."))
     name := "Automail",
     libraryDependencies ++= Seq(
       "org.typelevel" %% "cats-core" % "2.9.0",
-      "org.typelevel" %% "cats-effect" % "3.5.0"
+      "org.typelevel" %% "cats-effect" % "3.5.0",
+      "com.softwaremill.sttp.client3" %% "core" % "3.9.8"
     )
   )
