@@ -2,7 +2,7 @@ package gui.frame
 
 import gui.panel.CustomStdOut
 
-import java.awt.{BorderLayout,FlowLayout, GraphicsDevice, GraphicsEnvironment}
+import java.awt.{BorderLayout,FlowLayout,GridLayout, GraphicsDevice, GraphicsEnvironment}
 import javax.swing.WindowConstants.EXIT_ON_CLOSE
 import javax.swing.{JButton, JFrame, JTextField, SwingUtilities}
 import gui.panel._
@@ -16,8 +16,8 @@ object Graphics {
       frame.setDefaultCloseOperation(EXIT_ON_CLOSE)
 
       // FlowLayoutをJFrameに設定
-      frame.setLayout(new FlowLayout());
-
+      //frame.setLayout(new FlowLayout());
+      frame.setLayout(new GridLayout(2, 3));
       // ウィンドウを非表示にしておく
       frame.setUndecorated(true)
       frame.setResizable(false)
