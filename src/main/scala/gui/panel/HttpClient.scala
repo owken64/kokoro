@@ -1,16 +1,19 @@
-package gui
-import javax.swing._
-import javax.swing.WindowConstants.EXIT_ON_CLOSE
-import java.nio.charset.{Charset, StandardCharsets}
-import sttp.client3.UriContext
+package gui.panel
+
 import net.HttpRequest
+import sttp.client3.UriContext
+
+import java.awt.Dimension
+import java.nio.charset.StandardCharsets
+import javax.swing.WindowConstants.EXIT_ON_CLOSE
+import javax.swing._
 
 object HttpClient {
-  def frame(): Unit = {
+  def panel(): JPanel = {
     // JFrameの作成
-    val frame = new JFrame("Multi-line Text Field Example")
-    frame.setDefaultCloseOperation(EXIT_ON_CLOSE)
-    frame.setSize(400, 300)
+    //val frame = new JFrame("Multi-line Text Field Example")
+    //frame.setDefaultCloseOperation(EXIT_ON_CLOSE)
+    //frame.setSize(400, 300)
 
     val printButton = new JButton("GET")
     printButton.addActionListener(_ => {
@@ -35,8 +38,10 @@ object HttpClient {
     panel.add(printButton)
 
     // JFrameにJScrollPaneを追加
-    frame.add(panel)
+    //frame.add(panel)
     // フレームの表示
-    frame.setVisible(true)
+    //frame.setVisible(true)
+    panel.setPreferredSize(new Dimension(200, 100))
+    panel
   }
 }

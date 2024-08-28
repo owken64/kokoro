@@ -1,8 +1,8 @@
 package util
 
+import gui.panel.CustomStdOut
 import java.nio.file.{Files, Paths}
 import java.nio.charset.StandardCharsets
-import gui.CustomStdOut
 
 object SaveFile {
 

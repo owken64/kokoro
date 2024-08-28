@@ -1,16 +1,14 @@
-package gui
-
-import util.SaveFile
+package gui.panel
 
 import javax.swing._
-import javax.swing.WindowConstants.EXIT_ON_CLOSE
+import java.awt._
 
 object CommandExecuter {
-  def frame(): Unit = {
+  def panel(): JPanel = {
     // フレームを作成
-    val frame = new JFrame("TextField Example")
-    frame.setDefaultCloseOperation(EXIT_ON_CLOSE)
-    frame.setSize(300, 100)
+    //val frame = new JFrame("TextField Example")
+    //frame.setDefaultCloseOperation(EXIT_ON_CLOSE)
+    //frame.setSize(300, 100)
     // パネルを作成
     val panel = new JPanel
     // テキストフィールドを作成
@@ -26,8 +24,11 @@ object CommandExecuter {
     panel.add(textField)
     panel.add(executeButton)
     // フレームにパネルを追加
-    frame.add(panel)
+    //frame.add(panel)
     // フレームを表示
-    frame.setVisible(true)
+    //frame.setVisible(true)
+
+    panel.setPreferredSize(new Dimension(300, 100))
+    panel
   }
 }

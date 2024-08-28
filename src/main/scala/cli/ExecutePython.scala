@@ -1,8 +1,8 @@
 package cli
 
+import gui.panel.CustomStdOut
 import scala.sys.process._
 import scala.io.Source
-import gui.CustomStdOut
 
 object ExecutePython {
 

@@ -1,14 +1,17 @@
-package gui
-import javax.swing._
-import javax.swing.WindowConstants.EXIT_ON_CLOSE
+package gui.panel
+
 import util.SaveFile
 
+import java.awt.Dimension
+import javax.swing.WindowConstants.EXIT_ON_CLOSE
+import javax.swing._
+
 object TextEditor {
-  def frame(): Unit = {
+  def panel(): JPanel = {
       // JFrameの作成
-      val frame = new JFrame("Multi-line Text Field Example")
-      frame.setDefaultCloseOperation(EXIT_ON_CLOSE)
-      frame.setSize(400, 300)
+      //val frame = new JFrame("Multi-line Text Field Example")
+      //frame.setDefaultCloseOperation(EXIT_ON_CLOSE)
+      //frame.setSize(400, 300)
       // JTextAreaの作成
       val textArea = new JTextArea(10, 30) // 10行、30列のJTextArea
 
@@ -46,9 +49,11 @@ object TextEditor {
       panel.add(executeButton)
       panel.add(executeLeanButton)
 
+      panel.setPreferredSize(new Dimension(400, 300))
       // JFrameにJScrollPaneを追加
-      frame.add(panel)
+      //frame.add(panel)
       // フレームの表示
-      frame.setVisible(true)
+      //frame.setVisible(true)
+      panel
     }
 }
