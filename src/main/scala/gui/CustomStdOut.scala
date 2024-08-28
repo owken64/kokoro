@@ -40,6 +40,12 @@ object CustomStdOut {
       byteArrayOutputStream.reset()
     }
 
+    def myPrint_SJIS(message:String): Unit = {
+      System.out.println(message)
+      textArea.append(byteArrayOutputStream.toString("Shift-JIS"))
+      byteArrayOutputStream.reset()
+    }
+
     def myErr(message: String): Unit = {
       System.err.println(message)
       textArea.append(byteArrayOutputStream.toString("UTF-8"))

@@ -18,7 +18,6 @@ object TextEditor {
 
       val printButton = new JButton("Print")
       printButton.addActionListener(_ => {
-          println(textArea.getText)
           CustomStdOut.myPrint(textArea.getText)
       }) // ボタンを押すとプログラム終了
 

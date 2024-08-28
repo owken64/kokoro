@@ -6,3 +6,5 @@ Scala (sbt) が必要
 Python が必要
 
 Lean が必要
+
+Juliaが必要

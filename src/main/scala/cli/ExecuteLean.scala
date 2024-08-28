@@ -19,12 +19,14 @@ object ExecuteLean {
       //CustomStdOut.myPrint(output)
 
       // プロセスの終了コードを取得
-      val exitCode = process.!
-      CustomStdOut.myPrint(s"Command executed with exit code: $exitCode")
+      //val exitCode = process.!
+      //CustomStdOut.myPrint(s"Command executed with exit code: $exitCode")
+      val result = process.!!
+      CustomStdOut.myPrint(result)
     } catch {
       case e: Exception => {
         e.printStackTrace()
-        CustomStdOut.myPrint("Error occured@ExecuteLean.execute")
+        CustomStdOut.myErr("Error occured@ExecuteLean.execute")
       }
     }
   }
